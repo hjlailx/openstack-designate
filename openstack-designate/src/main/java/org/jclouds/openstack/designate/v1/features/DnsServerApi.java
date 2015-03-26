@@ -36,6 +36,7 @@ import org.jclouds.rest.annotations.Fallback;
 import org.jclouds.rest.annotations.Payload;
 import org.jclouds.rest.annotations.PayloadParam;
 import org.jclouds.rest.annotations.RequestFilters;
+import org.jclouds.rest.annotations.SelectJson;
 
 import com.google.common.collect.FluentIterable;
 
@@ -59,6 +60,7 @@ public interface DnsServerApi {
 	@Named("servers:list")
 	@GET
 	@Path("/servers")
+	@SelectJson("servers")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Fallback(EmptyFluentIterableOnNotFoundOr404.class)
 	FluentIterable<? extends Server> listServers();
@@ -105,6 +107,6 @@ public interface DnsServerApi {
 	@Consumes
 	@Fallback(FalseOnNotFoundOr404.class)
 	@Path("/servers/{id}")
-	Boolean deleteDeployment(@PathParam("id") String id);
+	Boolean deleteServer(@PathParam("id") String id);
 
 }

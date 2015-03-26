@@ -29,7 +29,6 @@ import javax.ws.rs.core.MediaType;
 import org.jclouds.Fallbacks.FalseOnNotFoundOr404;
 import org.jclouds.Fallbacks.NullOnNotFoundOr404;
 import org.jclouds.openstack.designate.v1.domain.Quota;
-import org.jclouds.openstack.designate.v1.domain.Record;
 import org.jclouds.openstack.designate.v1.options.UpdateQuotaOptions;
 import org.jclouds.openstack.keystone.v2_0.filters.AuthenticateRequest;
 import org.jclouds.rest.annotations.Fallback;
@@ -78,7 +77,7 @@ public interface QuotaApi {
 	@Produces(MediaType.APPLICATION_JSON)
 	@MapBinder(UpdateQuotaOptions.class)
 	@Fallback(NullOnNotFoundOr404.class)
-	Record updateRecord(@PathParam("tenantId") String tenantId , UpdateQuotaOptions ...options);
+	Quota updateQuota(@PathParam("tenantId") String tenantId , UpdateQuotaOptions ...options);
 
 	/**
 	 * @see QuotaApi#Reset

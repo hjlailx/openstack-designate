@@ -109,7 +109,7 @@ public interface DomainApi {
 	@Consumes
 	@Fallback(FalseOnNotFoundOr404.class)
 	@Path("/domains/{id}")
-	Boolean deleteDeployment(@PathParam("id") String id);
+	Boolean deleteDomain(@PathParam("id") String id);
 	
 	
 	/**
