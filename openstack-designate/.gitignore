@@ -1,0 +1,11 @@
+/bin
+/target
+*.project
+*.settings
+*.classpath
+/*/.gitignore
+*.launch
+*.idea
+/.idea
+*.metadata
+*.class
