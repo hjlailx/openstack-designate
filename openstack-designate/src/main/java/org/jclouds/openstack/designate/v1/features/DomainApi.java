@@ -121,6 +121,7 @@ public interface DomainApi {
 	@Named("domains:getServers Hosting a Domain")
 	@GET
 	@Path("/domains/{id}/servers")
+	@SelectJson("servers")
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Fallback(NullOnNotFoundOr404.class)
 	FluentIterable<? extends Server> getDomainServers(@PathParam("id") String id);

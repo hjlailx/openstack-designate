@@ -45,7 +45,7 @@ public class UpdateDomainOptions implements MapBinder {
 		protected abstract T self();
 		
 		protected String name ;
-		protected String ttl;
+		protected Integer ttl;
 		protected String email ;
 		
 		public T name(String name) {
@@ -53,7 +53,7 @@ public class UpdateDomainOptions implements MapBinder {
 			return self();
 		}
 		
-		public T ttl(String ttl) {
+		public T ttl(Integer ttl) {
 			this.ttl = ttl;
 			return self();
 		}
@@ -81,12 +81,12 @@ public class UpdateDomainOptions implements MapBinder {
 
 	private static class UpdateDomainRequest {
 		protected String name ;
-		protected String ttl;
+		protected Integer ttl;
 		protected String email ;
 	}
 
 	private final String name ;
-	private final String ttl;
+	private final Integer ttl;
 	private final String email ;
 
 	protected UpdateDomainOptions() {
@@ -95,7 +95,7 @@ public class UpdateDomainOptions implements MapBinder {
 		this.email = null ;
 	}
 
-	public UpdateDomainOptions(String name, String ttl, String email) {
+	public UpdateDomainOptions(String name, Integer ttl, String email) {
 		this.name = name ;
 		this.ttl = ttl ;
 		this.email = email ;
@@ -105,7 +105,7 @@ public class UpdateDomainOptions implements MapBinder {
 		return name;
 	}
 
-	public String getTtl() {
+	public Integer getTtl() {
 		return ttl;
 	}
 
